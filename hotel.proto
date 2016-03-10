@@ -1,0 +1,24 @@
+syntax = "proto3";
+package proto.hotel;
+
+message Room {
+    int32 id = 1;
+    string invCode = 2;
+    string rackRate = 3;
+    bool hideRackRate = 4;
+}
+
+message Hotel {
+    string id = 1;
+    string hotelCode = 2;
+    string hotelStatus = 3;
+    string hotelCurrency = 4;
+    int32 minutesOffsetUtc = 5;
+    string providerName = 6;
+
+    repeated Room rooms = 7;
+}
+
+message HotelDetailsResponseModel {
+    repeated Hotel hotels = 1;
+}
